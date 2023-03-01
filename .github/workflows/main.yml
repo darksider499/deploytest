@@ -40,7 +40,7 @@ jobs:
           username: ${{secrets.SSH_USER}}
           fingerprint: ${{secrets.FINGERPRINT}}
           key: ${{secrets.SSH_PRIVATE_KEY}}
-          command: |
+          script: |
             ssh-keyscan -H 100.116.187.76 >> ~/.ssh/known_hosts
             cd ${{ secrets.PROJECT_FOLDER }};
             mkdir test
