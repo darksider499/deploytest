@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run command on remote server
-        uses: appleboy/ssh-action@v0.1.8 #D3rHase/ssh-command-action@v0.2.2
+        uses: actions/checkout@v2 #D3rHase/ssh-command-action@v0.2.2
         with:
           host: ${{secrets.SSH_HOST}}
           username: ${{secrets.SSH_USER}}
