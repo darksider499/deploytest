@@ -37,8 +37,8 @@ jobs:
         uses: appleboy/ssh-action@v0.1.8 #D3rHase/ssh-command-action@v0.2.2
         with:
           host: ${{secrets.SSH_HOST}}
-          user: ${{secrets.SSH_USER}}
-          host_fingerprint: ${{secrets.FINGERPRINT}}
+          username: ${{secrets.SSH_USER}}
+          fingerprint: ${{secrets.FINGERPRINT}}
           private_key: ${{secrets.SSH_PRIVATE_KEY}}
           command: |
             ssh-keyscan -H 100.116.187.76 >> ~/.ssh/known_hosts
