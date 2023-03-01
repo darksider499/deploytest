@@ -39,7 +39,7 @@ jobs:
           host: ${{secrets.SSH_HOST}}
           username: ${{secrets.SSH_USER}}
           fingerprint: ${{secrets.FINGERPRINT}}
-          private_key: ${{secrets.SSH_PRIVATE_KEY}}
+          key: ${{secrets.SSH_PRIVATE_KEY}}
           command: |
             ssh-keyscan -H 100.116.187.76 >> ~/.ssh/known_hosts
             cd ${{ secrets.PROJECT_FOLDER }};
