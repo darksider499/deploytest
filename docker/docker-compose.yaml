@@ -1,0 +1,26 @@
+version: '3.7'
+
+networks:
+  default:
+    external: true
+  project:
+
+services:
+  nginx:
+     container_name: project_nginx
+     image: nginx:latest
+     restart: always
+     networks:
+       - project
+     volumes:
+      - /etc/letsencrypt:/etc/letsencrypt:rw
+      - ./nginx:/etc/nginx/conf.d
+      - ./logs:/var/log/nginx
+      - ./files:/var/www
+     ports:
+        - 80:80
+        - 443:443
+
+
+     
+
