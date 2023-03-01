@@ -39,6 +39,7 @@ jobs:
           host: ${{secrets.SSH_HOST}}
           user: root
         #  user: ${{secrets.SSH_USER}}
+          host_fingerprint: ${{secrets.FINGERPRINT}}
           private_key: ${{secrets.SSH_PRIVATE_KEY}}
           command: |
             ssh-keyscan -H 100.116.187.76 >> ~/.ssh/known_hosts
