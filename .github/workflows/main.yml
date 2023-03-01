@@ -42,7 +42,8 @@ jobs:
           #fingerprint: ${{secrets.FINGERPRINT}}
           script: |
             cd ${{ secrets.PROJECT_FOLDER }};
-            docker image prune -fa
+             #docker image prune -fa
+            docker container prune -fa
             docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
             docker run -d darksider499/ubuntu
         
