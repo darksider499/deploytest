@@ -45,7 +45,7 @@ jobs:
             cd ${{ secrets.PROJECT_FOLDER }};
             docker stop $(docker ps -aq)
             docker container rm $(docker ps -aq)
-            docker rmi -f darksider499/ubuntu
+            docker image pull darksider499/ubuntu
             docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
             docker run -d darksider499/ubuntu
         
